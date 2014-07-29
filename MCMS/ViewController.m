@@ -10,6 +10,8 @@
 #import "MagicalCreature.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -25,6 +27,21 @@
 
 }
 
+#pragma mark Actions
+- (IBAction)onAddButtonPressed:(id)sender {
+    MagicalCreature *newCreature;
+    if (![self.textField.text isEqualToString:@""]) {
+        newCreature = [[MagicalCreature alloc] initWithName:self.textField.text description:@"Without description"];
+        [self.creatures addObject:newCreature];
+        [self.tableView reloadData];
+        self.textField.text = @"";
+
+    }
+    [self.view endEditing:YES];
+}
+
+
+#pragma mark TableView Initializers
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCellID"];
