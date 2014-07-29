@@ -23,6 +23,7 @@
 		F93DAE2D198805ED00238B78 /* MCMSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F93DAE2C198805ED00238B78 /* MCMSTests.m */; };
 		F93DAE3819880D4D00238B78 /* MagicalCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = F93DAE3719880D4D00238B78 /* MagicalCreature.m */; };
 		F93DAE3A1988243A00238B78 /* CheckMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93DAE391988243A00238B78 /* CheckMate.framework */; };
+		F93DAE3D1988441000238B78 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93DAE3C1988441000238B78 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		F93DAE3619880D4D00238B78 /* MagicalCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalCreature.h; sourceTree = "<group>"; };
 		F93DAE3719880D4D00238B78 /* MagicalCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreature.m; sourceTree = "<group>"; };
 		F93DAE391988243A00238B78 /* CheckMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CheckMate.framework; sourceTree = "<group>"; };
+		F93DAE3B1988441000238B78 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F93DAE3C1988441000238B78 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				F93DAE08198805ED00238B78 /* Supporting Files */,
 				F93DAE3619880D4D00238B78 /* MagicalCreature.h */,
 				F93DAE3719880D4D00238B78 /* MagicalCreature.m */,
+				F93DAE3B1988441000238B78 /* DetailViewController.h */,
+				F93DAE3C1988441000238B78 /* DetailViewController.m */,
 			);
 			path = MCMS;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F93DAE3D1988441000238B78 /* DetailViewController.m in Sources */,
 				F93DAE18198805ED00238B78 /* ViewController.m in Sources */,
 				F93DAE3819880D4D00238B78 /* MagicalCreature.m in Sources */,
 				F93DAE12198805ED00238B78 /* AppDelegate.m in Sources */,

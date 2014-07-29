@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MagicalCreature.h"
+#import "DetailViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *textField;
@@ -40,6 +41,11 @@
     [self.view endEditing:YES];
 }
 
+#pragma mark TableView Handlers
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Row Selected %d", indexPath.row);
+    //    UITableView *cell = [tableView cellForRowAtIndexPath:indexPath];
+}
 
 #pragma mark TableView Initializers
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -52,6 +58,23 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.creatures.count;
+}
+
+#pragma mark Flow control
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"Preparing for segue %@", segue.identifier);
+    if ([segue.identifier isEqualToString:@"ShowCreatureSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+//      This is one way to pass parameters to a controller
+        DetailViewController *dvc = (DetailViewController *)segue.destinationViewController;
+        dvc.name = creature.name;
+        dvc.description = creature.description;
+        dvc.title = creature.name;
+//      This is another way to pass parameter to another controller
+//        [segue.destinationViewController setName:creature.name];
+//        [segue.destinationViewController setDescription:creature.description];
+    }
 }
 
 @end
