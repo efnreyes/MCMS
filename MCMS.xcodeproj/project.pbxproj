@@ -21,6 +21,8 @@
 		F93DAE23198805ED00238B78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93DAE05198805ED00238B78 /* UIKit.framework */; };
 		F93DAE2B198805ED00238B78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F93DAE29198805ED00238B78 /* InfoPlist.strings */; };
 		F93DAE2D198805ED00238B78 /* MCMSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F93DAE2C198805ED00238B78 /* MCMSTests.m */; };
+		F93DAE3819880D4D00238B78 /* MagicalCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = F93DAE3719880D4D00238B78 /* MagicalCreature.m */; };
+		F93DAE3A1988243A00238B78 /* CheckMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93DAE391988243A00238B78 /* CheckMate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		F93DAE28198805ED00238B78 /* MCMSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCMSTests-Info.plist"; sourceTree = "<group>"; };
 		F93DAE2A198805ED00238B78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F93DAE2C198805ED00238B78 /* MCMSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCMSTests.m; sourceTree = "<group>"; };
+		F93DAE3619880D4D00238B78 /* MagicalCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalCreature.h; sourceTree = "<group>"; };
+		F93DAE3719880D4D00238B78 /* MagicalCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreature.m; sourceTree = "<group>"; };
+		F93DAE391988243A00238B78 /* CheckMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CheckMate.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F93DAE3A1988243A00238B78 /* CheckMate.framework in Frameworks */,
 				F93DAE04198805ED00238B78 /* CoreGraphics.framework in Frameworks */,
 				F93DAE06198805ED00238B78 /* UIKit.framework in Frameworks */,
 				F93DAE02198805ED00238B78 /* Foundation.framework in Frameworks */,
@@ -101,6 +107,7 @@
 		F93DAE00198805ED00238B78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F93DAE391988243A00238B78 /* CheckMate.framework */,
 				F93DAE01198805ED00238B78 /* Foundation.framework */,
 				F93DAE03198805ED00238B78 /* CoreGraphics.framework */,
 				F93DAE05198805ED00238B78 /* UIKit.framework */,
@@ -119,6 +126,8 @@
 				F93DAE17198805ED00238B78 /* ViewController.m */,
 				F93DAE19198805ED00238B78 /* Images.xcassets */,
 				F93DAE08198805ED00238B78 /* Supporting Files */,
+				F93DAE3619880D4D00238B78 /* MagicalCreature.h */,
+				F93DAE3719880D4D00238B78 /* MagicalCreature.m */,
 			);
 			path = MCMS;
 			sourceTree = "<group>";
@@ -250,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F93DAE18198805ED00238B78 /* ViewController.m in Sources */,
+				F93DAE3819880D4D00238B78 /* MagicalCreature.m in Sources */,
 				F93DAE12198805ED00238B78 /* AppDelegate.m in Sources */,
 				F93DAE0E198805ED00238B78 /* main.m in Sources */,
 			);
@@ -376,6 +386,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCMS/MCMS-Prefix.pch";
 				INFOPLIST_FILE = "MCMS/MCMS-Info.plist";
@@ -389,6 +403,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCMS/MCMS-Prefix.pch";
 				INFOPLIST_FILE = "MCMS/MCMS-Info.plist";
