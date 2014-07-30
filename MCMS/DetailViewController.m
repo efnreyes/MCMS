@@ -11,6 +11,9 @@
 @interface DetailViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) IBOutlet UIButton *editButton;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (strong, nonatomic) IBOutlet UITextView *nameTextView;
 
 @end
 
@@ -28,10 +31,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.nameLabel.text = self.name;
+    self.nameLabel.text = self.magicalCreature.name;
     [self.nameLabel sizeToFit];
-    self.descriptionLabel.text = self.description;
+    self.descriptionLabel.text = self.magicalCreature.description;
     [self.descriptionLabel sizeToFit];
+}
+
+- (IBAction)onEditButtonPressed:(id)sender {
+
+    UIButton *btn = (id)sender;
+    NSLog(@"Edit button pressed: %@", btn.titleLabel.text);
+    if ([btn.titleLabel.text isEqualToString:@"Edit"]) {
+        NSLog(@"Edit Button");
+        [sender setTitle:@"Done" forState: UIControlStateNormal];
+        self.nameTextView.hidden = NO;
+        self.descriptionTextView.hidden = NO;
+        self.nameTextView.text = self.nameLabel.text;
+        self.descriptionTextView.text = self.descriptionLabel.text;
+    } else {
+        NSLog(@"Done Button");
+        [sender setTitle:@"Edit" forState: UIControlStateNormal];
+        self.nameLabel.text = self.nameTextView.text;
+        self.descriptionLabel.text = self.descriptionTextView.text;
+        self.nameTextView.hidden = YES;
+        self.descriptionTextView.hidden = YES;
+        self.magicalCreature.name = self.nameTextView.text;
+        self.magicalCreature.description = self.descriptionTextView.text;
+        [self.nameTextView resignFirstResponder];
+        [self.descriptionTextView resignFirstResponder];
+    }
 }
 
 /*

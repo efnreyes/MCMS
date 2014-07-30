@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MagicalCreature.h"
 
 @interface DetailViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *detailView;
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) MagicalCreature *magicalCreature;
 @end

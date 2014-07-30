@@ -10,7 +10,7 @@
 #import "MagicalCreature.h"
 #import "DetailViewController.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
@@ -22,10 +22,17 @@
 {
     [super viewDidLoad];
     MagicalCreature *medusa = [[MagicalCreature alloc] initWithName:@"Medusa" description:@"Has theface of a hideous human female with living venomous snakes in place of hair, gazing directly into her eyes would turn onlookers to stone"];
+    medusa.picture = [UIImage imageNamed:@"medusa"];
     MagicalCreature *unicorn = [[MagicalCreature alloc] initWithName:@"Unicorn" description:@"Beast with a large, pointed, spiraling horn projecting from its forehead"];
+    unicorn.picture = [UIImage imageNamed:@"unicorn"];
     MagicalCreature *gnome = [[MagicalCreature alloc] initWithName:@"Gnome" description:@"Diminutive spirit in Renaissance magic and alchemy"];
+    gnome.picture = [UIImage imageNamed:@"gnome"];
     self.creatures = [NSMutableArray arrayWithObjects:medusa, unicorn, gnome, nil];
 
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 #pragma mark Actions
@@ -62,14 +69,12 @@
 
 #pragma mark Flow control
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Preparing for segue %@", segue.identifier);
     if ([segue.identifier isEqualToString:@"ShowCreatureSegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
 //      This is one way to pass parameters to a controller
         DetailViewController *dvc = (DetailViewController *)segue.destinationViewController;
-        dvc.name = creature.name;
-        dvc.description = creature.description;
+        dvc.magicalCreature = creature;
         dvc.title = creature.name;
 //      This is another way to pass parameter to another controller
 //        [segue.destinationViewController setName:creature.name];
