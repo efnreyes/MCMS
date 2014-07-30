@@ -22,11 +22,11 @@
 {
     [super viewDidLoad];
     MagicalCreature *medusa = [[MagicalCreature alloc] initWithName:@"Medusa" description:@"Has theface of a hideous human female with living venomous snakes in place of hair, gazing directly into her eyes would turn onlookers to stone"];
-    medusa.picture = [UIImage imageNamed:@"medusa"];
+    medusa.picture = @"medusa";
     MagicalCreature *unicorn = [[MagicalCreature alloc] initWithName:@"Unicorn" description:@"Beast with a large, pointed, spiraling horn projecting from its forehead"];
-    unicorn.picture = [UIImage imageNamed:@"unicorn"];
+    unicorn.picture = @"unicorn";
     MagicalCreature *gnome = [[MagicalCreature alloc] initWithName:@"Gnome" description:@"Diminutive spirit in Renaissance magic and alchemy"];
-    gnome.picture = [UIImage imageNamed:@"gnome"];
+    gnome.picture = @"gnome";
     self.creatures = [NSMutableArray arrayWithObjects:medusa, unicorn, gnome, nil];
 
 }

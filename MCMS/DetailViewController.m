@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
 @property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (strong, nonatomic) IBOutlet UITextView *nameTextView;
+@property (strong, nonatomic) IBOutlet UIImageView *creaturePicture;
 
 @end
 
@@ -35,6 +36,7 @@
     [self.nameLabel sizeToFit];
     self.descriptionLabel.text = self.magicalCreature.description;
     [self.descriptionLabel sizeToFit];
+    self.creaturePicture.image = [UIImage imageNamed:self.magicalCreature.picture];
 }
 
 - (IBAction)onEditButtonPressed:(id)sender {
